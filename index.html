@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>パスワード生成アプリ</title>
+    <!-- bootstrapのCDNを読み込む -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="main container-md p-4">
+      <h1>パスワード生成アプリ</h1>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>項目</th>
+              <th>設定</th>
+            </tr>
+          <tbody>
+            <tr>
+              <td>文字数</td>
+              <td>
+                <select name="length" id="length">
+                  <option value="8">8文字</option>
+                  <option value="12">12文字</option>
+                  <option value="16">16文字</option>
+                  <option value="20">20文字</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>大文字</td>
+              <td>
+                <input type="checkbox" name="uppercase" id="uppercase" checked/>
+              </td>
+            </tr>
+            <tr>
+              <td>小文字</td>
+              <td>
+                <input type="checkbox" name="lowercase" id="lowercase" checked />
+              </td>
+            </tr>
+            <tr>
+              <td>数字</td>
+              <td>
+                <input type="checkbox" name="number" id="number" checked />
+              </td>
+            </tr>
+            <tr>
+              <td>記号</td>
+              <td>
+                <input type="checkbox" name="symbol" id="symbol" checked />
+              </td>
+            </tr>
+            <tr>
+              <td>除外する文字</td>
+              <td>
+                <input type="text" name="exclude" id="exclude" placeholder="半角で入力してください"/>
+              </td>
+            </tr>
+            <tr>
+              <td>生成するパスワードの数</td>
+              <td>
+                <input type="number" name="count" id="count" value="5" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="outputPassword()">生成</button>
+    </div>
+    <div class="resalut container-md p-4">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Password</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="password">
+        </tbody>
+      </table>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
